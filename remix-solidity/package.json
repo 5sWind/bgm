@@ -1,0 +1,83 @@
+{
+  "name": "remix-solidity",
+  "version": "0.2.14",
+  "description": "Bgmchain IDE and tools for the web",
+  "contributors": [
+    {
+      "name": "Yann Levreau",
+      "email": "yann@bgmdev.com"
+    },
+    {
+      "name": "Liana Husikyan",
+      "email": "liana@bgmdev.com"
+    }
+  ],
+  "main": "./index.js",
+  "dependencies": {
+    "bgmchainjs-util": "^4.5.0",
+    "bgmchainjs-vm": "2.4.0",
+    "fast-async": "^6.1.2",
+    "remix-lib": "0.3.13",
+    "solc": "^0.5.0",
+    "webworkify": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babelify": "^7.3.0",
+    "standard": "^7.0.1",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "test": "standard && tape ./test/tests.js"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/*"
+    ],
+    "parser": "babel-eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5sWind/bgm.git"
+  },
+  "author": "cpp-bgmchain team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/5sWind/bgm/issues"
+  },
+  "homepage": "https://github.com/5sWind/bgm#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "plugins": [
+            [
+              "fast-async",
+              {
+                "runtimePatten": null,
+                "compiler": {
+                  "promises": true,
+                  "es7": true,
+                  "noRuntime": true,
+                  "wrapAwait": true
+                }
+              }
+            ],
+            "transform-object-assign"
+          ]
+        }
+      ],
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  }
+}

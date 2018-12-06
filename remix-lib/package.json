@@ -1,0 +1,90 @@
+{
+  "name": "remix-lib",
+  "version": "0.3.13",
+  "description": "Bgmchain IDE and tools for the web",
+  "contributors": [
+    {
+      "name": "Yann Levreau",
+      "email": "yann@bgmdev.com"
+    },
+    {
+      "name": "Liana Husikyan",
+      "email": "liana@bgmdev.com"
+    }
+  ],
+  "main": "./index.js",
+  "dependencies": {
+    "async": "^2.1.2",
+    "bgmchainjs-block": "^1.6.0",
+    "bgmchainjs-tx": "^1.3.3",
+    "bgmchainjs-util": "^5.1.2",
+    "bgmchainjs-vm": "2.4.0",
+    "bgmchains": "^3.0.15",
+    "fast-async": "^6.1.2",
+    "solc": "^0.5.0",
+    "web3": "0.20.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^7.3.0",
+    "standard": "^7.0.1",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "test": "standard && tape ./test/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5sWind/bgm.git"
+  },
+  "author": "cpp-bgmchain team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/5sWind/bgm/issues"
+  },
+  "homepage": "https://github.com/5sWind/bgm#readme",
+  "standard": {
+    "ignore": [
+      "node_modules/*",
+      "build/*",
+      "test/resources/*"
+    ],
+    "parser": "babel-eslint"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "plugins": [
+            [
+              "fast-async",
+              {
+                "runtimePatten": null,
+                "compiler": {
+                  "promises": true,
+                  "es7": true,
+                  "noRuntime": true,
+                  "wrapAwait": true
+                }
+              }
+            ],
+            "transform-object-assign"
+          ]
+        }
+      ],
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  }
+}

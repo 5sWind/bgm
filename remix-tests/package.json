@@ -1,0 +1,58 @@
+{
+  "name": "remix-tests",
+  "version": "0.0.21",
+  "description": "Tests for the Bgmchain tool suite Remix",
+  "main": "./src/index.js",
+  "contributors": [
+    {
+      "name": "Iuri Matias",
+      "email": "iuri@bgmchain.org"
+    },
+    {
+      "name": "Yann Levreau",
+      "email": "yann@bgmdev.com"
+    }
+  ],
+  "bin": {
+    "remix-tests": "./bin/remix-tests"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "standard && mocha tests/ -t 300000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5sWind/bgm-tests.git"
+  },
+  "author": "Remix Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/5sWind/bgm-tests/issues"
+  },
+  "standard": {
+    "ignore": [
+      "tests/"
+    ]
+  },
+  "homepage": "https://github.com/5sWind/bgm-tests#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "change-case": "^3.0.1",
+    "colors": "^1.1.2",
+    "commander": "^2.13.0",
+    "remix-lib": "0.3.13",
+    "remix-simulator": "0.0.8",
+    "remix-solidity": "0.2.14",
+    "signale": "^1.2.1",
+    "web3": "1.0.0-beta.36",
+    "winston": "^3.0.0"
+  },
+  "peerDependencies": {
+    "yo-yoify": "latest"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.0",
+    "babel-preset-es2017": "^6.24.1",
+    "standard": "^10.0.3"
+  }
+}

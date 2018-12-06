@@ -1,0 +1,21 @@
+{
+  "lerna": "2.10.2",
+  "packages": [
+    "remix-debug",
+    "remix-lib",
+    "remix-solidity",
+    "remix-analyzer",
+    "remix-tests",
+    "remix-simulator"
+  ],
+  "command": {
+    "init": {
+      "exact": true
+    },
+    "publish": {
+      "exact": true,
+      "skipGit": true
+    }
+  },
+  "version": "independent"
+}
